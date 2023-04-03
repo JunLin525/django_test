@@ -17,9 +17,19 @@ from django.contrib import admin
 from django.urls import path, include
 from mainsite.views import homepage
 from mainsite import views
+from mysite import views as MTV_views
+
+MTV_subpatterns = [
+    path('admins/', admin.site.urls),
+    path('about/', MTV_views.about),
+    path('list/', MTV_views.listing),
+    path('list/<sku>', MTV_views.disp_detail),
+]
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage),
     path('post/<slug:slug>', views.showpost),
+    path('MTV/',include(MTV_subpatterns))
+
 ]

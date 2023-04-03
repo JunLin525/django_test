@@ -1,0 +1,46 @@
+<!--list.html-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>販售物件列表</title>
+    </head>
+
+    <body>
+        <p>
+        <h2>
+            以下是販售物件列表
+        </h2>
+        <hr>
+        <table width=400 border=1 bgcolor='#cfeeff'>
+            <tr><td>-</td><td>品名</td><td>售價</td><td>庫存</td></tr>   
+        {% for p in products %}     
+            <tr>
+                <td><a href='/list/{{p.sku}}'>{{p.sku}}</a></td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.qty}}</td>
+            </tr>
+        {% endfor %}
+        </table>
+        </p>
+        <p>
+            <h2>
+                以下是需補貨列表
+            </h2>
+            <hr>
+            <table width=400 border=1 bgcolor='#caaeff'>
+                <tr><td>-</td><td>補貨品名</td><td>缺貨售價</td><td>剩餘庫存</td></tr>   
+            {% for p in products2 %}     
+                <tr>
+                    <td><a href='/list/{{p.sku}}'>{{p.sku}}</a></td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.qty}}</td>
+                </tr>
+            {% endfor %}
+            </table>   
+        </p>
+     </body>
+
+</html>

@@ -28,3 +28,4 @@ def disp_detail(request, sku):
 
 def mainsite(request):
     return render(request,'mainsite.html')
+

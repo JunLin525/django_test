@@ -30,6 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',homepage),
     path('post/<slug:slug>', views.showpost),
-    path('MTV/',include(MTV_subpatterns))
+    path('MTV/',include(MTV_subpatterns)),
+    path('listing/<int:yr>/<int:mon>/<int:day>/',views.listing,name='post-url'),
+    path('post/<int:yr>/<int:mon>/<int:day>/<int:post_num>/',views.post,name='post'),
 
 ]

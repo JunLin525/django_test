@@ -27,4 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('about/<int:author_no>',views.about),
     path('info/',include(mypatterns)),
+    path('list/<int:yr>/<int:mon>/<int:day>/', views.listing, name='list-url'),
+    path('post/<int:yr>/<int:mon>/<int:day>/<int:post_num>/',views.post, name='post-url'),
 ]

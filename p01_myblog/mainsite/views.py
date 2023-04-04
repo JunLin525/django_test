@@ -4,6 +4,7 @@ from django.template.loader import get_template
 from datetime import datetime
 from .models import Post
 from django.shortcuts import redirect
+from django.urls import reverse
 # Create your views here.
 
 def homepage(request):
@@ -27,3 +28,12 @@ def showpost(request, slug):
             return HttpResponse(html)
     except:
         return redirect('/')
+    
+
+def listing(request, yr, mon, day):
+    html="<h2>You List Date is {}/{}/{}</h2><hr>".format(yr, mon, day)
+    return HttpResponse(html)
+
+def post(request, yr, mon, day, post_num):
+    html="<h2>Today is {}/{}/{}: Your Post Number is {}</h2><hr>".format(yr,mon,day,post_num)
+    return HttpResponse(html)

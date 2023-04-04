@@ -20,8 +20,7 @@ def contact(request):
     return HttpResponse("hello.contact")
 
 def listing(request, yr, mon, day):
-    html="<h2>This is the list date {}/{}/{}/</h2>".format(yr, mon, day)
-    return HttpResponse(html)
+    return render(request,'list.html', locals())
 
 
 def homepage(request):
@@ -42,3 +41,19 @@ def homepage(request):
 def post(request, yr, mon, day, post_num):
     html="<h2>Today is {}/{}/{} : your post number:{}</h2><hr>".format(yr, mon, day, post_num)
     return HttpResponse(html)
+
+def post2(request, yr, mon, day, post_num):
+    return render(request,'post2.html',locals())
+
+def multi(request, a, b):
+    temp=a*b
+    return render(request, 'multi.html', locals())
+
+def temp_C(request, F):
+    C=(float(F)-32)*5/9
+    return render(request, 'C degree.html', locals())
+
+def temp_F(request, C):
+    F=float(C)*9/5 + 32
+    return render(request,'F degree.html', locals())
+

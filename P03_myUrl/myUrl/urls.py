@@ -29,4 +29,8 @@ urlpatterns = [
     path('info/',include(mypatterns)),
     path('list/<int:yr>/<int:mon>/<int:day>/', views.listing, name='list-url'),
     path('post/<int:yr>/<int:mon>/<int:day>/<int:post_num>/',views.post, name='post-url'),
+    path('post2/<int:yr>/<int:mon>/<int:day>/<int:post_num>/', views.post2, name='post-url-2'),
+    path('multi/<int:a>/<int:b>/',views.multi, name='multi-link'),
+    path('temp_C/<F>',views.temp_C, name='temp-C'),
+    path('temp_F/<C>',views.temp_F, name='temp-F'),
 ]

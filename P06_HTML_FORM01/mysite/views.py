@@ -10,6 +10,7 @@ def get_example(request):
         se_month=request.GET['bmonth']
         se_day  =request.GET['bday']
         urfmedia=request.GET.getlist('fmedia')
+        locations=request.GET['location']
     #若是沒有，回傳NONE
     except:
         urid=None

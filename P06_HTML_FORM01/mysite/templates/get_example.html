@@ -43,9 +43,15 @@
     <input type ='checkbox' name='fmedia' value='端傳媒'>端傳媒
     <input type ='checkbox' name='fmedia' value='鏡周刊'>鏡周刊
     <input type ='checkbox' name='fmedia' value='壹週刊'>壹週刊
-    <input type ='checkbox' name='fmedia' value='上報'>上報
+    <input type ='checkbox' name='fmedia' value=  '上報'>　上報
     <br/>
-
+     <!-- 建立radio-->
+     居住地(單選):
+     <input type ='radio' name='location' value='台灣本島'>台灣本島
+     <input type ='radio' name='location' value='台灣離島'>台灣離島
+     <input type ='radio' name='location' value='居於國外'>居於國外
+    
+     <br/>
     <!-- id跟password -->
     <label for ='user_id'>    Your ID:</label>
     <input id  ='user_id'     type='text' name='user_id'>
@@ -68,12 +74,14 @@ Your ID: {{urid | default:" 請輸入ID "}}<br>
                 {% empty %}
                     Nocomment
                 {% endfor %}</em></li>
+    <li><em>居住地：{{ locations | default:" 請選擇您的居所 " }}</em></li>
     </ul>
     {% else %}
     <br>
     <em>{{urid| default:" "}}你的帳號或密碼錯啦</em>
     {% endif %}
     <br>
+    
 
 
     

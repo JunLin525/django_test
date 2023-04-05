@@ -20,6 +20,10 @@ def index(request):
         message='成功存取，請記得編輯密碼[{}]，訊息審查過後會顯示。'.format(user_pass)
     return render(request,'index.html',locals())
 
+def show(request):
+    show_post=models.Post.objects.filter(nickname='sss').order_by('pub_time')
+    return render(request, 'show.html', locals())
+
 # Create your views here.
 def get_example(request):
     # 如果有就get

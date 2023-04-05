@@ -8,11 +8,14 @@
         <input text  ='search_text'   type='text' name='q'>
         <input type ='submit' value ='問谷歌大神'>
     </form><br><br>
+
+
+    <h1><em>說說你今天的想法吧~!</em></h1>
    <!-- 心情貼文表單 -->
    <form name='my form' action='/' method='GET'>
         現在的心情:<br/>
         {% for m in moods %}
-        <input type = 'radio' name='mood' value='{{ m.status }}'>{{m.status}}
+        <input type = 'radio' class='form-check-input' name='mood' value='{{ m.status }}'>{{m.status}}
         {% endfor %}
         <br/>
         心情留言板:<br/>
@@ -38,6 +41,8 @@
         {{ message }}
     </div>
     {% endif %}
+
+    <!--顯示貼文-->
     <div class="row">
         {% for p in posts %}
         <div class="col-sm-12 col-md-4">

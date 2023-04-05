@@ -19,5 +19,6 @@ from mysite import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.get_example),
+    path(''      ,views.index),
+    path('get_example/', views.get_example),
 ]
